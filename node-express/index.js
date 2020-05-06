@@ -1,8 +1,11 @@
 const express = require('express');
-const app = express()
+const app = express();
+const morgan = require('morgan');
 
 const hostname = "localhost";
 const port = 3000;
+
+app.use(morgan("dev"));
 
 app.listen(port, hostname, () =>{
     console.log(`server running at http://${hostname}:${port}`);
