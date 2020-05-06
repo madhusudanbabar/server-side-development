@@ -1,0 +1,16 @@
+{
+  "name": "node-callbacks",
+  "version": "1.0.0",
+  "description": "node callback demonstration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [
+    "node",
+    "callbacks",
+    "async"
+  ],
+  "author": "krypton",
+  "license": "ISC"
+}
