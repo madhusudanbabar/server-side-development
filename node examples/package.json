@@ -1,0 +1,11 @@
+{
+  "name": "node-examples",
+  "version": "1.0.0",
+  "description": "simple NodeJS examples",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "krypton",
+  "license": "ISC"
+}
