@@ -7,6 +7,9 @@ const port = 3000;
 
 app.use(morgan("dev"));
 
+app.use(express.static(__dirname+"/public"));
+
+
 app.listen(port, hostname, () =>{
     console.log(`server running at http://${hostname}:${port}`);
 })
