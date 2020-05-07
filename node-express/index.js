@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const dishRouter = require("./routes/dishes")
+const dishRouter = require("./routes/dishRouter")
 
 const hostname = "localhost";
 const port = 3000;
