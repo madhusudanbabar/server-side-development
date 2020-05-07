@@ -37,5 +37,8 @@ promoRouter.route("/:promoId").all((req, res, next) =>{
 .get((req, res) => {
     res.end(`sending you the details of promotion with promoId ${req.params.promoId}`);
 })
+.post((req, res) =>{
+    res.end(`POST operation not supported on /promotions${req.url}`)
+})
 
 module.exports = promoRouter

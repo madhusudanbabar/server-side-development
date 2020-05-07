@@ -37,5 +37,8 @@ leadersRouter.route("/:leaderId").all((req, res, next) =>{
 .get((req, res) => {
     res.end(`sending you the details of leader with leaderId ${req.params.leaderId}`);
 })
+.post((req, res) =>{
+    res.end(`POST operation not supported on /leaders${req.url}`)
+})
 
 module.exports = leadersRouter

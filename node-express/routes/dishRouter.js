@@ -34,7 +34,10 @@ dishRouter.route("/")
         res.end(`deleting the details of dish with id ${req.params.id}`);
     })
     .put((req, res) => {
-        res.end(`updating details of dish with id ${req.params.id}`);
+        res.end(`updating details of dish with id ${req.params.id}\n`);        
+    })
+    .post((req, res) =>{
+        res.end(`POST operation not supported on /dishes${req.url}`)
     })
     .get((req, res) => {
         res.end(`sending you the details of dish with id ${req.params.id}`);
