@@ -3,7 +3,7 @@ const assert = require('assert');
 
 exports.insertDocument = (db, document, collection, callback) => {
     const coll = db.collection(collection);
-    coll.insert(document, (err, res) =>{
+    coll.insertOne(document, (err, res) =>{
         assert.equal(err, null);
         console.log("inserted "+res.result.n +"documents to the collection");
         callback(res);
@@ -32,5 +32,6 @@ exports.updateDocument = (db, document, update, collection, callback) => {
     coll.updateOne(document, { $set: update}, null, (err, res) =>{
         assert.equal(err, null);
         console.log("Updated the document with ", update);
+        callback(res)
     })
 }
