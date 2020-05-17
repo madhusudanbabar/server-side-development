@@ -1,0 +1,19 @@
+{
+  "name": "mongoose",
+  "version": "1.0.0",
+  "description": "mongoose odm",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [
+    "mongooose",
+    "mongodb",
+    "odm"
+  ],
+  "author": "krypton",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.9.14"
+  }
+}
