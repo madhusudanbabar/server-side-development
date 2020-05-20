@@ -12,7 +12,7 @@ leadersRouter.route("/")
         Leaders.find({})
             .then((leaders) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "application/json")
+                res.setHeader("Content-Type", "application/json")
                 res.json(leaders)
             }, (err) => next(err))
     })
@@ -20,7 +20,7 @@ leadersRouter.route("/")
         Leaders.create(req.body)
             .then((leader) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "application/json")
+                res.setHeader("Content-Type", "application/json")
                 res.json(leader)
             }, (err) => next(err))
     })
@@ -33,7 +33,7 @@ leadersRouter.route("/")
         Leaders.remove({})
             .then((resp) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "application/json")
+                res.setHeader("Content-Type", "application/json")
                 res.json(resp)
             }, (err) => next(err))
     });
@@ -43,7 +43,7 @@ leadersRouter.route("/:leaderId")
         Leaders.findById(req.params.leaderId)
             .then((leader) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "application/json")
+                res.setHeader("Content-Type", "application/json")
                 res.json(leader)
             }, (err) => next(err))
     })
@@ -68,7 +68,7 @@ leadersRouter.route("/:leaderId")
         Leaders.findByIdAndRemove(req.params.leaderId)
             .then((resp) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "application/json")
+                res.setHeader("Content-Type", "application/json")
                 res.json(resp)
             }, (err) => next(err))
     })

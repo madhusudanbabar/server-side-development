@@ -13,7 +13,7 @@ dishRouter.route("/")
         Dishes.find({})
             .then((dishes) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "applocation/json")
+                res.setHeader("Content-Type", "applocation/json")
                 res.json(dishes)
             }, (err) => next(err))
             .catch((err) => next(err))
@@ -23,7 +23,7 @@ dishRouter.route("/")
             .then((dish) => {
                 console.log("dish created", dish);
                 res.statusCode = 200
-                res.setHeader("ContentType", "application/json")
+                res.setHeader("Content-Type", "application/json")
                 res.json(dish)
             }, (err) => next(err))
             .catch((err) => next(err))
@@ -36,7 +36,7 @@ dishRouter.route("/")
         Dishes.remove({}).then((resp) => {
             console.log("dishes removed");
             res.statusCode = 200
-            res.setHeader("ContentType", "application/json")
+            res.setHeader("Content-Type", "application/json")
             res.json(resp)
         }, (err) => {
             next(err)
@@ -52,7 +52,7 @@ dishRouter.route("/:id")
     .get((req, res, next) => {
         Dishes.findById(req.params.id).then((dishes) => {
             res.statusCode = 200;
-            res.setHeader("ContentType", "applocation/json")
+            res.setHeader("Content-Type", "applocation/json")
             res.json(dishes)
         }, (err) => {
             next(err)
@@ -69,7 +69,7 @@ dishRouter.route("/:id")
             $set: req.body
         }, { new: true }).then((dish) => {
             res.statusCode = 200;
-            res.setHeader("ContentType", "applocation/json")
+            res.setHeader("Content-Type", "applocation/json")
             res.json(dish)
         }, (err) => {
             next(err)
@@ -81,7 +81,7 @@ dishRouter.route("/:id")
         Dishes.findByIdAndRemove(req.params.id)
             .then((resp) => {
                 res.statusCode = 200;
-                res.setHeader("ContentType", "application/json");
+                res.setHeader("Content-Type", "application/json");
                 res.json(resp)
             }, (err) => {
                 next(err)
@@ -97,7 +97,7 @@ dishRouter.route("/:id/comments")
             .then((dish) => {
                 if (dish != null) {
                     res.statusCode = 200;
-                    res.setHeader("ContentType", "applocation/json");
+                    res.setHeader("Content-Type", "applocation/json");
                     res.json(dish.comments);
                 } else {
                     err = new Error("dish " + req.params.id + " not found");
@@ -115,7 +115,7 @@ dishRouter.route("/:id/comments")
                     dish.save()
                         .then((dish) => {
                             res.statusCode = 200;
-                            res.setHeader("ContentType", "applocation/json");
+                            res.setHeader("Content-Type", "applocation/json");
                             res.json(dish)
                         }, (err) => next(err));
                 } else {
@@ -140,7 +140,7 @@ dishRouter.route("/:id/comments")
                     dish.save()
                         .then((dish) => {
                             res.statusCode = 200;
-                            res.setHeader("ContentType", "applocation/json");
+                            res.setHeader("Content-Type", "applocation/json");
                             res.json(dish)
                         }, (err) => next(err));
                 } else {
@@ -161,7 +161,7 @@ dishRouter.route("/:id/comments/:commentId")
             .then((dish) => {
                 if (dish != null && dish.comments.id(req.params.commentId) != null) {
                     res.statusCode = 200;
-                    res.setHeader("ContentType", "applocation/json");
+                    res.setHeader("Content-Type", "applocation/json");
                     res.json(dish.comments.id(req.params.commentId));
                 } else if (dish == null) {
                     err = new Error("dish " + req.params.id + " not found");
@@ -193,7 +193,7 @@ dishRouter.route("/:id/comments/:commentId")
                     dish.save()
                         .then((dish) => {
                             res.statusCode = 200;
-                            res.setHeader("ContentType", "applocation/json");
+                            res.setHeader("Content-Type", "applocation/json");
                             res.json(dish)
                         }, (err) => next(err));
                 } else if (dish == null) {
@@ -217,7 +217,7 @@ dishRouter.route("/:id/comments/:commentId")
                     dish.save()
                         .then((dish) => {
                             res.statusCode = 200;
-                            res.setHeader("ContentType", "applocation/json");
+                            res.setHeader("Content-Type", "applocation/json");
                             res.json(dish)
                         }, (err) => next(err));
                 } else if (dish == null) {
